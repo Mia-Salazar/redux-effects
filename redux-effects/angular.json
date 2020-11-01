@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "redux-effects"
+    }
+  },
+  "defaultProject": "redux-effects",
+  "cli": {
+    "analytics": "981073ac-7c0e-4852-b3b8-dfd3d3b21281"
+  }
 }
