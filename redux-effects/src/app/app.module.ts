@@ -9,6 +9,8 @@ import { ComponentsModule } from './components/components.module';
 import { UsersModule } from './users/users.module';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './store/app.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { effect } from './store/effects';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { appReducers } from './store/app.reducers';
     UsersModule,
     RouterModule,
     HttpClientModule,
-    StoreModule.forRoot(appReducers)
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot(effect)
   ],
   providers: [],
   bootstrap: [AppComponent]
