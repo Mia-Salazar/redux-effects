@@ -1,5 +1,11 @@
 <section class="container">
     <h1>Users' List</h1>
+    <div class="alert alert-warning" role="alert" *ngIf="error">
+      {{error.message}}
+    </div>
+    <div class="alert alert-info" role="alert" *ngIf="loading">
+      Loading...
+    </div>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let user of userList">
             <div class="card" style="width: 18rem;">

@@ -12,6 +12,9 @@ import { AppState } from 'src/app/store/app.reducers';
 })
 export class ListComponent implements OnInit {
   userList: User[];
+  loading: boolean;
+  error: any;
+
   constructor(private usersService: UsersService, private store: Store<AppState>) { }
 
   ngOnInit(): void {
@@ -26,8 +29,10 @@ export class ListComponent implements OnInit {
     //   } 
     // )
     this.store.dispatch(loadUsers());
-    this.store.select('users').subscribe(users =>{
-      this.userList = users.users;
+    this.store.select('users').subscribe(({loading, error, users}) =>{
+      this.userList = users;
+      this.loading = loading;
+      this.error = error;
       console.log(users, 'html');
     });
   }
