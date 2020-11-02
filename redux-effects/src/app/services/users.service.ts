@@ -19,4 +19,13 @@ export class UsersService {
              }
            ))
   }
+
+  getUser(id:string){
+    return this.http.get(`${this.url}/users/${id}`)
+           .pipe(map(
+             resp =>{
+              return resp['data']
+             }
+           ))
+  }
 }
